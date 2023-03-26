@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Recycled Products Store</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="fetching.js"></script>
+  </head>
+  <body>
+    <main>
+      <section>
+        <h2>Welcome to Recycled Products Store</h2>
+        <p>We offer a variety of products made from recycled waste materials, including plastic bottles, paper, and more.</p>
+        <p>Our mission is to help reduce waste and promote sustainable living, one product at a time.</p>
+      </section>
+      <section>
+        <h2>Featured Products</h2>
+        <ul>
+          <% products.forEach(product => { %>
+            <div class="tile">
+              <li>
+                <img src="<%= product.image_url %>" alt="<%= product.name %>">
+                <h3><%= product.name %></h3>
+                <p>Company name: <%= product.company_name %></p>
+                <p>Company location: <%= product.company_location %></p>
+                <p>Price: $<%= product.price %></p>
+                <a href="payment.html" class="cta">Buy Now</a>
+              </li>
+            </div>
+          <% }) %>
+        </ul>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2023 Recycled Products Store. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Leaflet.js Example</title>
+  <!-- Include Leaflet CSS and JavaScript -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+  integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+  crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+     crossorigin=""></script>
+  <!-- Set the dimensions of the map container -->
+  <style>
+    #mapid { 
+      height: 200px; 
+      width: 200px;
+      text-align: center;
+      border: 2px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 0px 0px 5px 0px #bbb;
+    }
+    .leaflet-popup-content-wrapper {
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0px 0px 5px 0px #bbb;
+    }
+    .leaflet-popup-content {
+      font-size: 16px;
+      padding: 10px;
+    }
+    .leaflet-popup-tip-container {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="mapid"></div>
+  <script>
+    // Initialize the map
+    var map = L.map('map').setView([51.505, -0.09], 13);
+
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    L.marker([51.5, -0.09]).addTo(map)
+    .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+    .openPopup();
+  </script>
+</body>
+</html>
